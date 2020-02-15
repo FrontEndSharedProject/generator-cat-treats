@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@import "./home/photo";
+
+body {
+  background: $background-color;
+}
+
+.intro {
+  p {
+    text-align: center;
+    color: #fff;
+    &.brand {
+      font-family: "Pacifico", cursive;
+      font-size: 5em;
+      text-transform: capitalize;
+    }
+
+    &.desc{
+      font-size: 18px;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+  }
+}
+
+.star-light{
+  margin: 30px auto 30px;
+  padding: 0;
+  max-width: 250px;
+  border: 0;
+  border-top: 6px solid #ffff;
+  text-align: center;
+  &::after{
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+    color: #fff;
+  }
+}

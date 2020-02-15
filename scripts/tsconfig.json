@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    //  same as vue browser support limit
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "sourceMap": false,
+    "declaration": true,
+    "noImplicitAny": false // Raise error on expressions and declarations with an implied any type.
+  },
+  "include": ["../src/**/*"],
+  "exclude": ["node_modules", "dist", "build"]
+}

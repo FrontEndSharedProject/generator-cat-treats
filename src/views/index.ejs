@@ -1,0 +1,24 @@
+<%
+    let brand = "Yummy Treats, Speed Up!";
+    let desc = "Feeding Your Cat's or Let Them Mess Up!"
+ %>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cat Treats</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<% include ./templates/photo.ejs %>
+<div class="intro">
+    <p class="brand"><%=brand%></p>
+    <hr class="star-light" />
+    <p class="desc"><%=desc%></p>
+</div>
+
+</body>
+</html>
