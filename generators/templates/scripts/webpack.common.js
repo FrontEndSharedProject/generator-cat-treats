@@ -145,10 +145,7 @@ module.exports = async () => {
     .use("sass-loader")
     .loader("sass-loader")
     .options({
-      prependData: fs.readFileSync(
-        path.resolve(srcPath, "scss", "variables.scss"),
-        "utf-8"
-      ),
+      prependData: `@import "@src/scss/variables.scss";`,
       sourceMap: true
     });
 
