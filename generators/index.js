@@ -41,7 +41,7 @@ module.exports = class extends Generator {
       let projectName = answers.projectName
         ? answers.projectName
         : this.appname;
-      projectName = projectName.trim().replace(" ", "-");
+      projectName = projectName.trim().replace(/\s/g, "-");
       projectName = projectName.replace(/^-/, "");
       this.appName = projectName;
     });
