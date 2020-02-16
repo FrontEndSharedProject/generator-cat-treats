@@ -8,7 +8,7 @@
     "build": "npx webpack --mode=production --config ./scripts/webpack.prod.js",
     "build-server": "npx http-server ./dist",
     "dll": "npx webpack --config ./scripts/webpack.dll.config.js",
-    "wep-convert": "node ./scripts/convertWebp.js"
+    "webp-convert": "node ./scripts/convertWebp.js"
   },
   "repository": {
     "type": "git",
