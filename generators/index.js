@@ -91,6 +91,13 @@ module.exports = class extends Generator {
    * 安装方法
    */
   install() {
-    this.spawnCommand('npm install && npm run serve');
+    // 安装 package 安装.
+    this.installDependencies({
+      npm: true,
+      bower: false,
+      yarn: false
+    }).then(() => {
+      this.spawnCommand("npm", ["run", "serve"]);
+    });
   }
 };

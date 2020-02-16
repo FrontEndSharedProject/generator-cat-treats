@@ -23,6 +23,6 @@
   ],
   "homepage": "https://github.com/carl-jin/generator-cat-treats#readme",
   "dependencies": {
-    "yeoman-generator": "^4.5.0"
+    "yeoman-generator": "^2.0.5"
   }
 }
