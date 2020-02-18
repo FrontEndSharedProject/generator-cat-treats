@@ -189,7 +189,7 @@ module.exports = async () => {
     });
 
   config.module
-    .rule("media")
+    .rule("medias")
     .test(/\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/)
     .exclude.add(/node_modules/)
     .end()
@@ -201,7 +201,7 @@ module.exports = async () => {
       limit: false,
       esModule: false,
       name: path => resolveFilePath(path, isDev),
-      outputPath: isDev ? undefined : "media"
+      outputPath: isDev ? undefined : "medias"
     });
 
   config.module
