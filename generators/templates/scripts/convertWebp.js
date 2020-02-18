@@ -1,7 +1,7 @@
 const userConfig = require("../config");
 const glob = require("glob");
 const path = require("path");
-const distPath = path.resolve(path.dirname(__dirname), "dist", "img");
+const distPath = path.resolve(path.dirname(__dirname), "dist", "images");
 const webp = require("webp-converter");
 
 glob.sync(`${distPath}/**/*.{jpg,png,jpeg}`).map(path => {

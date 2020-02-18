@@ -167,7 +167,7 @@ module.exports = async () => {
         options: {
           esModule: false,
           name: path => resolveFilePath(path, isDev),
-          outputPath: isDev ? undefined : "img"
+          outputPath: isDev ? undefined : "images"
         }
       }
     });
@@ -184,7 +184,7 @@ module.exports = async () => {
     .options({
       limit: false,
       name: path => resolveFilePath(path, isDev),
-      outputPath: isDev ? undefined : "img",
+      outputPath: isDev ? undefined : "images",
       esModule: false
     });
 
