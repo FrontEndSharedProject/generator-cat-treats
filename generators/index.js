@@ -85,6 +85,14 @@ module.exports = class extends Generator {
       this.templatePath("config.js"),
       this.destinationPath("config.js")
     );
+    this.fs.copy(
+      this.templatePath(".gitignore"),
+      this.destinationPath(".gitignore")
+    );
+    this.fs.copy(
+      this.templatePath("README.md"),
+      this.destinationPath("README.md")
+    );
   }
 
   /**
