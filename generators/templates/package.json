@@ -8,7 +8,8 @@
     "build": "npx webpack --mode=production --config ./scripts/webpack.prod.js",
     "build-server": "npx http-server ./dist",
     "dll": "npx webpack --config ./scripts/webpack.dll.config.js",
-    "webp-convert": "node ./scripts/convertWebp.js"
+    "webp-convert": "node ./scripts/convertWebp.js",
+    "commit": "npx git-cz"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,9 @@
     "chalk": "^3.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "command-line-args": "^5.1.1",
+    "commitizen": "^4.0.3",
     "css-loader": "^3.4.2",
+    "cz-conventional-changelog": "^3.1.0",
     "ejs-html-loader": "^4.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "fibers": "^3.1.0",
@@ -64,5 +67,10 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

@@ -13,7 +13,8 @@ This is what you will see in the package.json of a project using the default pre
     "build": "npx webpack --mode=production --config ./scripts/webpack.prod.js",
     "build-server": "npx http-server ./dist",
     "dll": "npx webpack --config ./scripts/webpack.dll.config.js",
-    "webp-convert": "node ./scripts/convertWebp.js"
+    "webp-convert": "node ./scripts/convertWebp.js",
+    "commit": "npx git-cz"
   }
 }
 ```
