@@ -9,7 +9,7 @@ module.exports = {
     host: "localhost"
   },
   injectLicense: {
-    includes: /\.(css|js)/,
+    includes: /\.(css|js)$/,
     licenseHeader: ``
   },
   /**

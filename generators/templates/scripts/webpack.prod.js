@@ -1,6 +1,7 @@
 const userConfig = require("../config");
 const WebpReplacePlugin = require("./plugins/WebpReplacePlugin");
 const injectLicensePlugin = require("./plugins/injectLicensePlugin");
+const injectLatestTag = require("./plugins/injectLatestTag");
 
 module.exports = async () => {
   let { config, port } = await require("./webpack.common")();
@@ -33,6 +34,7 @@ module.exports = async () => {
         userConfig.injectLicense.includes
       ]);
 
+  config.plugin("inject-latest-tag-plug").use(injectLatestTag);
   userConfig.chainWebpack(config);
 
   config.stats({
