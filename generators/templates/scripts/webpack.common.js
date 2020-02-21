@@ -100,9 +100,9 @@ module.exports = async () => {
     .use("html-loader")
     .loader("html-loader")
     .options({
-      // esModule: false,
-      // interpolate: true,
-      // attributes: true
+      url(path) {
+        return /^#/.test(path);
+      }
     })
     .end()
     .use("ejs-html-loader")
