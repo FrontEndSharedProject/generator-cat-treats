@@ -254,8 +254,8 @@ module.exports = async () => {
         .plugin("mini-css-extract-plugin")
         .use(require("mini-css-extract-plugin"), [
           {
-            filename: "css/[name].css",
-            chunkFilename: "css/[name].chunks.css"
+            filename: "css/[name].min.css",
+            chunkFilename: "css/[name].chunks.min.css"
           }
         ]);
     })
