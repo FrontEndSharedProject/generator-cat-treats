@@ -4,7 +4,7 @@ const injectLicensePlugin = require("./plugins/injectLicensePlugin");
 const injectLatestTag = require("./plugins/injectLatestTag");
 
 module.exports = async () => {
-  let { config, port } = await require("./webpack.common")();
+  let { config, port,isDev } = await require("./webpack.common")();
   //  build js path config
   config.output
     .filename("js/[name].min.js")
@@ -35,7 +35,7 @@ module.exports = async () => {
       ]);
 
   config.plugin("inject-latest-tag-plug").use(injectLatestTag);
-  userConfig.chainWebpack(config);
+  userConfig.chainWebpack(config,isDev);
 
   config.stats({
     timings: true,

@@ -23,7 +23,7 @@ class ejsReloadPlugin {
 }
 
 module.exports = async () => {
-  let { config, port } = await require("./webpack.common")();
+  let { config, port, isDev } = await require("./webpack.common")();
   //  dev server
   config.devServer
     // .quiet(true)
@@ -56,13 +56,13 @@ module.exports = async () => {
       chunkOrigins: false,
       performance: true,
       errors: true,
-      warnings: true,
+      warnings: true
     })
     .before((app, server) => (devServer = server));
 
   config.plugin("ejs-reload-plugin").use(ejsReloadPlugin);
 
-  userConfig.chainWebpack(config);
+  userConfig.chainWebpack(config, isDev);
 
   return config.toConfig();
 };

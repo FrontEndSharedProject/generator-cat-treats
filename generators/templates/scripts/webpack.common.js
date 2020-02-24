@@ -283,5 +283,5 @@ module.exports = async () => {
     .filename("[name].min.js")
     .chunkFilename("[name].bundle.js");
 
-  return { config, port };
+  return { config, port, isDev };
 };

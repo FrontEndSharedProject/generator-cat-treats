@@ -14,7 +14,8 @@ module.exports = {
   },
   /**
    * integrate config into webpack config
-   * @param config
+   * @param {object} config - webpack-chain object
+   * @param {boolean} isDev - env of current command
    * @example
    * config.devtool('eval-cheap-module-source-map')
    *   config.module
@@ -25,5 +26,5 @@ module.exports = {
    *
    *   more used checkout https://github.com/neutrinojs/webpack-chain
    */
-  chainWebpack(config) {}
+  chainWebpack(config, isDev) {}
 };
