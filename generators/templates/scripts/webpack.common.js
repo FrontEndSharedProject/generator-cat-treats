@@ -21,7 +21,7 @@ module.exports = async () => {
 
   let port = await getPort({
     port: userConfig.devServer.port,
-    host: userConfig.devServer.host
+    host: "0.0.0.0"
   });
 
   //
@@ -35,19 +35,6 @@ module.exports = async () => {
     config
       .entry(baseName)
       .add(entry)
-      .when(isDev, config => {
-        config
-          .add(
-            `webpack-dev-server/client?` +
-              url.format({
-                protocol: "http",
-                port: port,
-                hostname: userConfig.devServer.host,
-                pathname: "/sockjs-node"
-              })
-          )
-          .add("webpack/hot/dev-server");
-      });
   });
   glob.sync(`${srcPath}/views/*.ejs`).map(view => {
     let baseName = path.basename(view).split(".")[0];

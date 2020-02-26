@@ -35,11 +35,11 @@ module.exports = async () => {
     .port(port)
     .inline(true)
     .writeToDisk(false)
-    // .useLocalIp(true)
+    .useLocalIp(true)
     .open(true)
     .hot(true)
-    // .host("0.0.0.0")
-    // .clientLogLevel("silent")
+    .host("0.0.0.0")
+    .disableHostCheck(true)
     .stats({
       timings: true,
       modules: false,

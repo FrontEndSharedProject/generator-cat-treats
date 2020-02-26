@@ -5,8 +5,7 @@ module.exports = {
     quality: 80
   },
   devServer: {
-    port: 8080,
-    host: "localhost"
+    port: 8080
   },
   injectLicense: {
     includes: /\.(css|js)$/,
