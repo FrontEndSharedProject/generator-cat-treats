@@ -16,7 +16,7 @@ let isDev = mode === "development" ? true : false;
 
 module.exports = async () => {
   const config = new Config();
-  config.devtool(isDev ? "source-map" : false);
+  config.devtool(false);
   config.mode(isDev ? "development" : "production");
 
   let port = await getPort({
@@ -32,9 +32,7 @@ module.exports = async () => {
     if (entry.match(/\.d\.ts/)) {
       return;
     }
-    config
-      .entry(baseName)
-      .add(entry)
+    config.entry(baseName).add(entry);
   });
   glob.sync(`${srcPath}/views/*.ejs`).map(view => {
     let baseName = path.basename(view).split(".")[0];
@@ -121,7 +119,7 @@ module.exports = async () => {
         .loader("postcss-loader")
         .options({
           ident: "postcss",
-          sourceMap: true,
+          sourceMap: false,
           plugins: loader => [require("autoprefixer")]
         });
     })
@@ -129,7 +127,10 @@ module.exports = async () => {
     .loader("sass-loader")
     .options({
       prependData: `@import "@src/scss/variables.scss";`,
-      sourceMap: true
+      sourceMap: true,
+      sassOptions: {
+        outputStyle: "compressed"
+      }
     });
 
   config.module
