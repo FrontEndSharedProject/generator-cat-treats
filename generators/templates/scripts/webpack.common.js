@@ -16,7 +16,7 @@ let isDev = mode === "development" ? true : false;
 
 module.exports = async () => {
   const config = new Config();
-  config.devtool(false);
+  config.devtool(isDev ? "source-map" : false);
   config.mode(isDev ? "development" : "production");
 
   let port = await getPort({
