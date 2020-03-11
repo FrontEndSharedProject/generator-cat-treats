@@ -98,10 +98,6 @@ module.exports = async () => {
   config.module
     .rule("scss")
     .test(/\.(scss|css)$/)
-    .exclude.add(/node_modules/)
-    .end()
-    .include.add(srcPath)
-    .end()
     .when(
       isDev,
       config => {
