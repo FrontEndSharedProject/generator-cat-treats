@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "npx webpack-dev-server --mode=development --config ./scripts/webpack.dev.js",
-    "build": "npx webpack --mode=production --config ./scripts/webpack.prod.js",
+    "build": "npx webpack --mode=production --config ./scripts/webpack.prod.js && node ./scripts/replaceOutputName.js",
     "build-server": "npx http-server ./dist",
     "dll": "npx webpack --config ./scripts/webpack.dll.config.js",
     "webp-convert": "node ./scripts/convertWebp.js",

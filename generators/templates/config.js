@@ -1,5 +1,6 @@
 module.exports = {
   publicPath: "/",
+  useProjectNameOutput: false,
   webp: {
     replacePlugin: true,
     quality: 80
@@ -25,5 +26,16 @@ module.exports = {
    *
    *   more used checkout https://github.com/neutrinojs/webpack-chain
    */
-  chainWebpack(config, isDev) {}
+  chainWebpack(config, isDev) {
+    if (!isDev) {
+      config.optimization.splitChunks(false);
+      config.externals([
+        {
+          jquery: "root jquery",
+          gsap: "root gsap",
+          "vanilla-lazyload": "root vanilla-lazyload"
+        }
+      ]);
+    }
+  }
 };
