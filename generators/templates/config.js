@@ -31,7 +31,7 @@ module.exports = {
       config.optimization.splitChunks(false);
       config.externals([
         {
-          jquery: "root jquery",
+          jquery: "root jQuery",
           gsap: "root gsap",
           "vanilla-lazyload": "root vanilla-lazyload"
         }
