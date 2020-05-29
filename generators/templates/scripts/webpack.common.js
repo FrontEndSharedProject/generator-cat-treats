@@ -86,7 +86,13 @@ module.exports = async () => {
     .loader("html-loader")
     .options({
       url(path) {
-        return /^#/.test(path);
+        let allowsArray = ["data", "tel", "javascript", "mailto", "/"];
+        let filters = allowsArray.filter(item => path.indexOf(item) === 0);
+        if (filters.length > 0) {
+          return true;
+        } else {
+          return /^#/.test(path);
+        }
       }
     })
     .end()

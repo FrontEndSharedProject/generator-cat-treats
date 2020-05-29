@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     //  same as vue browser support limit
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "strict": true,
     "importHelpers": true,
